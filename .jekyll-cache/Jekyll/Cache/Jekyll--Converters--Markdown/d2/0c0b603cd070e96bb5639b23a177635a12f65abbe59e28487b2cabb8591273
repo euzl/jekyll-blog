@@ -1,0 +1,63 @@
+I"f<p>git pull 했을 때 발생하는 <strong>overwritten by merge</strong> 해결하는 법</p>
+
+<p>(로컬브랜치와 원격브랜치의 충돌)</p>
+
+<h2 id="1-에러-발생">1. 에러 발생</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: Your local changes to the following files would be overwritten by merge:
+  .idea/codeStyles/Project.xml      &lt;- 이 파일 때문에 git pull 실패!
+</code></pre></div></div>
+
+<p>로컬에서 변경된 파일이 pull로 가져오려는 파일과 충돌이 나는 경우</p>
+
+<p>보통 commit을 잘해주면 되지만, commit하면 안 되는 파일인 경우 난감하다. (또는 수정중이어서 commit을 못한 상태에서 다른 작업을 하는 경우)</p>
+
+<p>이럴 때 사용할 수 있는 방법!</p>
+
+<h2 id="2-해결-방법">2. 해결 방법</h2>
+<h3 id="1-git-stash">1) git stash</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">git stash</code>는 local에서의 변경사항을 임시로 백업해서 <strong>working directory를 HEAD상태</strong>(clean working directory)로 만들어준다.</p>
+
+<p>따라서 <code class="highlighter-rouge">git stash</code>를 사용하면 unstaged 변경사항이 있을 때 commit하지 않아도 현재의 상황을 stash에 임시로 백업해두고 <code class="highlighter-rouge">git pull</code>을 할 수 있게 된다.</p>
+
+<h3 id="2-git-pull">2) git pull</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull
+       -&gt; 현재 branch에 remote 되어있는 branch에서 Pull 해온다.
+</code></pre></div></div>
+
+<p>또는</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull origin &lt;branch name&gt;     
+       -&gt; origin에 연동된 원격저장소에서 특정 branch만 pull 해온다.
+</code></pre></div></div>
+
+<p>해주면 pull 이 성공적으로 된다!!🥳</p>
+
+<h3 id="3-git-stash-pop">3) git stash pop</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash pop
+</code></pre></div></div>
+
+<p>으로 저장된 stash를 다시 적용한다.</p>
+
+<p><code class="highlighter-rouge">git stash pop</code>은 stash에 저장한 내용을 working directory에 적용하고, stash에서 제거한다.</p>
+
+<h2 id="3-git-pull-충돌시-정리">3. git pull 충돌시 정리</h2>
+<blockquote>
+  <p>$ git stash
+$ git pull
+$ git stash pop</p>
+</blockquote>
+
+<h2 id="4-참조">4. 참조</h2>
+<ul>
+  <li><a href="https://potensj.tistory.com/90">git pull 시 특정 branch 를 pull 해오기</a></li>
+  <li><a href="https://nesoy.github.io/articles/2017-03/Git-Stash">Git Pull 충돌 오류시 해결방법</a></li>
+  <li><a href="https://git-scm.com/docs/git-stash">Git 공식사이트</a></li>
+</ul>
+:ET
