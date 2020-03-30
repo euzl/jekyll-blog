@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>예외처리 신경쓰자 – 뉴디닐기 – Diary of new Dean();</title>
+  <title>Git | git pull 충돌 에러 해결법 = git stash – 뉴디닐기 – Diary of new Dean();</title>
 
       <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,20 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="백준 2331번 문제풀다가 느꼈다.
-나는 예외처리를 미리미리 안한다.
-자꾸 예외가 없을거라고 생각하나보다.
+    <meta name="description" content="git pull 했을 때 발생하는 overwritten by merge 해결하는 법
 " />
-    <meta property="og:description" content="백준 2331번 문제풀다가 느꼈다.
-나는 예외처리를 미리미리 안한다.
-자꾸 예외가 없을거라고 생각하나보다.
+    <meta property="og:description" content="git pull 했을 때 발생하는 overwritten by merge 해결하는 법
 " />
     
     <meta name="author" content="뉴디닐기" />
 
     
-    <meta property="og:title" content="예외처리 신경쓰자" />
-    <meta property="twitter:title" content="예외처리 신경쓰자" />
+    <meta property="og:title" content="Git | git pull 충돌 에러 해결법 = git stash" />
+    <meta property="twitter:title" content="Git | git pull 충돌 에러 해결법 = git stash" />
     
   <!-- Async font loading -->
 <script>
@@ -87,18 +83,24 @@
 
     <div id="main" role="main" class="container">
       <article class="post">
-  <h1>예외처리 신경쓰자</h1>
+  <h1>Git | git pull 충돌 에러 해결법 = git stash</h1>
 
   <div>
     <span class="date">
-      2019-09-12
+      2019-12-16
     </span>
 
     <ul class="tag">
       
       <li>
-        <a href="http://localhost:4000/tags#Remember">
-          Remember
+        <a href="http://localhost:4000/tags#Git">
+          Git
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://localhost:4000/tags#TIP">
+          TIP
         </a>
       </li>
       
@@ -106,19 +108,82 @@
   </div>
 
   <div class="entry">
-    <p>백준 2331번 문제풀다가 느꼈다.
-나는 예외처리를 미리미리 안한다.
-자꾸 예외가 없을거라고 생각하나보다.</p>
+    <p>git pull 했을 때 발생하는 <strong>overwritten by merge</strong> 해결하는 법</p>
 
-<p>문제에 예외에 대한 힌트가 없는 것도 아님!!!</p>
+<p>(로컬브랜치와 원격브랜치의 충돌)</p>
 
-<p>암튼 예외처리를 안하니까 예제는 다 맞는데 왜 틀렸지? 라면서 미궁속으로 빠진다…
+<p><br /></p>
+
+<h2 id="1-에러-발생">1. 에러 발생</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: Your local changes to the following files would be overwritten by merge:
+  .idea/codeStyles/Project.xml      &lt;- 이 파일 때문에 git pull 실패!
+</code></pre></div></div>
+
+<p>로컬에서 변경된 파일이 pull로 가져오려는 파일과 충돌이 나는 경우</p>
+
+<p>보통 commit을 잘해주면 되지만, commit하면 안 되는 파일인 경우 난감하다. <br />(또는 수정중이어서 commit을 못한 상태에서 다른 작업을 하는 경우)</p>
+
+<p>이럴 때 사용할 수 있는 방법!</p>
+
+<p><br />
 <br /></p>
 
-<h3 id="결론">결론</h3>
+<h2 id="2-해결-방법">2. 해결 방법</h2>
+<h3 id="1-git-stash">1) git stash</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">git stash</code>는 local에서의 변경사항을 임시로 백업해서 <strong>working directory를 HEAD상태</strong>(clean working directory)로 만들어준다.</p>
+
+<p>따라서 <code class="highlighter-rouge">git stash</code>를 사용하면 unstaged 변경사항이 있을 때 commit하지 않아도 현재의 상황을 stash에 임시로 백업해두고 <code class="highlighter-rouge">git pull</code>을 할 수 있게 된다.</p>
+
+<p><br /></p>
+
+<h3 id="2-git-pull">2) git pull</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull
+       -&gt; 현재 branch에 remote 되어있는 branch에서 Pull 해온다.
+</code></pre></div></div>
+
+<p>또는</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull origin &lt;branch name&gt;     
+       -&gt; origin에 연동된 원격저장소에서 특정 branch만 pull 해온다.
+</code></pre></div></div>
+
+<p>해주면 pull 이 성공적으로 된다!!🥳</p>
+
+<p><br /></p>
+
+<h3 id="3-git-stash-pop">3) git stash pop</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash pop
+</code></pre></div></div>
+
+<p>으로 저장된 stash를 다시 적용한다.</p>
+
+<p><code class="highlighter-rouge">git stash pop</code>은 stash에 저장한 내용을 working directory에 적용하고, stash에서 제거한다.</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="3-git-pull-충돌시-정리">3. git pull 충돌시 정리</h2>
+<blockquote>
+  <p>$ git stash<br />
+$ git pull<br />
+$ git stash pop</p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<h2 id="4-참조">4. 참조</h2>
 <ul>
-  <li>미리미리 예외처리를 합시당</li>
-  <li>틀린게 없는 것 같은데 틀렸을 때는 놓친 예외가 있는지 확인합시당</li>
+  <li><a href="https://potensj.tistory.com/90">git pull 시 특정 branch 를 pull 해오기</a></li>
+  <li><a href="https://nesoy.github.io/articles/2017-03/Git-Stash">Git Pull 충돌 오류시 해결방법</a></li>
+  <li><a href="https://git-scm.com/docs/git-stash">Git 공식사이트</a></li>
 </ul>
 
 <hr />
@@ -128,10 +193,16 @@
 
   <div class="pagination">
     
+      <span class="prev" >
+          <a href="http://localhost:4000/darkflow-outlet/">
+            &#xE000; Darkflow | 두달간 사용하며 알게된 것들
+          </a>
+      </span>
+    
     
       <span class="next" >
-          <a href="http://localhost:4000/darkflow-outlet/">
-            Darkflow | 두달간 사용하며 알게된 것들 &#xE001;
+          <a href="http://localhost:4000/hello-world/">
+            블로그 이사했어요! &#xE001;
           </a>
       </span>
     
