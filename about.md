@@ -15,7 +15,6 @@ permalink: /about/
 
 - (2020.03 ~ ) 경희대학교 컴퓨터공학과 4학년 재학
 - (2019.07 ~ 2020.01) Petpeotalk Inc.
-- (2018.11) Project [Emotion Word Art]
 - (2018.06 ~ 2018.08) K-SW Summer Program @Purdue Univ.
 <br>
 <br>

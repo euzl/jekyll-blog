@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  font-family: "Spoqa Han Sans", "Source Sans Pro", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", "Verdana", "Arial", "Dotum", sans-serif;
+  font-family: 'Jeju Gothic', serif;
   color: #343a40;
   line-height: 1.6;
 }
@@ -169,7 +169,7 @@ ol > li:before, ul > li:before {
 ul > li:before {
   content: "\2022";
   padding-right: 0.3em;
-  font-family: inherit;
+  font-family: 'Jeju Gothic', serif;
   font-size: 1.4em;
   line-height: 1.2;
 }
@@ -182,7 +182,7 @@ ol > li:before {
   counter-increment: section;
   content: counter(section) ".";
   padding-right: 0.3em;
-  font-family: inherit;
+  font-family: 'Jeju Gothic', serif;
   font-size: 1em;
   line-height: inherit;
 }
@@ -388,7 +388,7 @@ img {
   margin: 0;
   color: #333;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Jeju Gothic', serif;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -409,7 +409,7 @@ img {
 nav {
   float: right;
   margin-top: 23px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Jeju Gothic', serif;
   font-size: 18px;
 }
 

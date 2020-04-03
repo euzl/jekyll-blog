@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: $base-font;
+  font-family: 'Jeju Gothic', serif;
   color: $base-color;
   line-height: 1.6;
 }
@@ -128,7 +128,7 @@ ul {
   > li:before {
     content: "\2022";
     padding-right: $ul-bullets-right-space;
-    font-family: $ul-bullets-font;
+    font-family: 'Jeju Gothic', serif;
     font-size: $ul-bullets-font-size;
     line-height: $ul-bullets-font-line-height;
   }
@@ -141,7 +141,7 @@ ol {
     counter-increment: section;
     content: counter(section) ".";
     padding-right: $ol-bullets-right-space;
-    font-family: $ol-bullets-font;
+    font-family: 'Jeju Gothic', serif;
     font-size: $ol-bullets-font-size;
     line-height: $ol-bullets-font-line-height;
   }
@@ -356,7 +356,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: 'Jeju Gothic', serif;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -375,7 +375,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: 'Jeju Gothic', serif;
   font-size: 18px;
 
   @include mobile {
