@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-03T15:05:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">뉴디닐기</title><subtitle>Diary of new Dean();</subtitle><entry><title type="html">블로그 이사했어요!</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="블로그 이사했어요!" /><published>2020-03-31T00:00:00+09:00</published><updated>2020-03-31T00:00:00+09:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/">&lt;p&gt;깃헙블로그 첫 글이다!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-07T00:27:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">뉴디닐기</title><subtitle>Diary of new Dean();</subtitle><entry><title type="html">GitHub | 기존 프로젝트 GitHub에 올리기</title><link href="http://localhost:4000/github-with-existing-repo/" rel="alternate" type="text/html" title="GitHub | 기존 프로젝트 GitHub에 올리기" /><published>2020-04-06T00:00:00+09:00</published><updated>2020-04-06T00:00:00+09:00</updated><id>http://localhost:4000/github-with-existing-repo</id><content type="html" xml:base="http://localhost:4000/github-with-existing-repo/">&lt;p&gt;&lt;em&gt;&lt;strong&gt;안드로이드 스튜디오&lt;/strong&gt;에서 프로젝트를 GitHub에 올리는 방법이지만, 다른 기존 프로젝트들도 방법은 동일할 거라고 생각합니다.&lt;/em&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-1-vcs-연결하기-1-2와-순서무관&quot;&gt;1-1. VCS 연결하기 (1-2와 순서무관)&lt;/h2&gt;
+&lt;p&gt;1) 안드로이드 스튜디오에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;VCS - Enable Version Control Intergration...&lt;/code&gt; 클릭
+    &lt;img width=&quot;297&quot; alt=&quot;스크린샷 2020-04-06 오후 11 56 41&quot; src=&quot;https://user-images.githubusercontent.com/37680108/78572336-4c45ea80-7862-11ea-802e-9965b6555a00.png&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) Git으로 하겠다고 선택
+&lt;img src=&quot;https://user-images.githubusercontent.com/37680108/78572500-844d2d80-7862-11ea-8e92-ca333c41fe8e.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-2-github에서-repository-생성&quot;&gt;1-2. GitHub에서 Repository 생성&lt;/h2&gt;
+&lt;p&gt;&lt;img width=&quot;713&quot; alt=&quot;스크린샷 2020-04-06 오후 11 52 57&quot; src=&quot;https://user-images.githubusercontent.com/37680108/78572709-c37b7e80-7862-11ea-88aa-91c5f71587e8.png&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;자유롭게 만들면 되지만, 위의 캡쳐와 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize this repository with a README&lt;/code&gt;는 체크하지 않는 것이 좋다. 아래 캡쳐에 있는 안내문이 안 뜨기 때문에 혼란스러울 수 있기 때문이다. (이미 코드를 알고 있으면 상관없음)
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;792&quot; alt=&quot;스크린샷 2020-04-06 오후 11 53 11&quot; src=&quot;https://user-images.githubusercontent.com/37680108/78572918-089fb080-7863-11ea-96e0-fb9c5eeead9e.png&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;repository를 만들면 위의 화면이 뜬다! 
+여기서 &lt;code class=&quot;highlighter-rouge&quot;&gt;...or push an existing repository from the command line&lt;/code&gt;에 나와있는 명령어를 이용할 것이다. 
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-안드로이드-프로젝트에서-remote설정-및-push&quot;&gt;2. 안드로이드 프로젝트에서 remote설정 및 push&lt;/h2&gt;
+&lt;p&gt;이제 안드로이드 프로젝트가 있는 폴더 terminal(또는 git)을 열어 다음 명령어 두 줄을 쳐주면 끝이다! 
+*위의 캡쳐와 같이 깃헙에서 해당 repository에 적혀있음. 그대로 붙여넣기 하면 됨.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote add origin https://github.com/&amp;lt;사용자아이디&amp;gt;/&amp;lt;레포이름&amp;gt;.git
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;🛎주의할 점은 push이전에 commit 을 해줘야한다!! 그렇지 않으면… (아래에서 계속)
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-1-혹시-이런-에러를-만나셨나요-글을-쓴-목적&quot;&gt;2-1. 혹시 이런 에러를 만나셨나요? (글을 쓴 목적)&lt;/h3&gt;
+&lt;p&gt;&lt;img width=&quot;328&quot; alt=&quot;스크린샷 2020-04-06 오후 11 37 37&quot; src=&quot;https://user-images.githubusercontent.com/37680108/78574020-5e288d00-7864-11ea-9e05-432312b839be.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;error: src refspec master does not match any.
+error: failed to push some refs to '~'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에러원인 : git을 초기화하고 &lt;strong&gt;commit을 하지 않은 상태&lt;/strong&gt;에서 push를 시도해서&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;해결방법 : commit을 해주면 된다 ^!^&lt;/p&gt;
+
+    &lt;p&gt;$ git add . 
+  $ git commit -m “first commit”
+  $ git push -u origin master&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(꼭 위의 코드와 같지 않아도 된다.)
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-참조&quot;&gt;3. 참조&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gamjatwigim.tistory.com/74&quot;&gt;안드로이드 깃허브 연동 &amp;amp; 올리기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=kkson50&amp;amp;logNo=221322357858&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;[문제해결] error: src refspec master does not match any. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html&quot;&gt;[Git] git add 취소하기, git commit 취소하기, git push 취소하기&lt;/a&gt; ; 이번에 쓰이진 않았지만 유용할 듯&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="GitHub" /><category term="시행착오" /><summary type="html">안드로이드 스튜디오에서 프로젝트를 GitHub에 올리는 방법이지만, 다른 기존 프로젝트들도 방법은 동일할 거라고 생각합니다.</summary></entry><entry><title type="html">블로그 이사했어요!</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="블로그 이사했어요!" /><published>2020-03-31T00:00:00+09:00</published><updated>2020-03-31T00:00:00+09:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/">&lt;p&gt;깃헙블로그 첫 글이다!&lt;/p&gt;
 
 &lt;p&gt;잘 작성되고 있는지 모르겠군 ~&lt;/p&gt;
 
