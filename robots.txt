@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://euzl.github.io/sitemap.xml
+Host: https://euzl.github.io
